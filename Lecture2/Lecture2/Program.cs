@@ -1,9 +1,10 @@
 ﻿
-//Console.WriteLine("Enter password:");
-
+// Opakování z minula
+Console.WriteLine("Enter password:");
 string password = Console.ReadLine();
 
-if (password == "1234")
+// Podmínka - password musí mít hodnotu "1234"
+if (password == "1234") // Poznámka: toto není návod na ukládání hesel
 {
     Console.WriteLine("You are the chosen one!");
 }
@@ -12,12 +13,13 @@ else
     Console.WriteLine("Wrong password");
 }
 
-//// 'Hello, jmeno!'
 
+// Úkol: Zeptat se uživatele na jméno a vypsat:
+// 'Hello, {jmeno}!'
 
-//Console.WriteLine("What is your name?");
-//string name = Console.ReadLine();
-//Console.WriteLine("Hello, " + name);
+Console.WriteLine("What is your name?");
+string name = Console.ReadLine();
+Console.WriteLine("Hello, " + name);
 
 
 Console.WriteLine("Cyklus for:");
@@ -58,23 +60,40 @@ do
 } while (otherNumber < 5);
 
 
+
+
+
+
+//// Úloha: zeptej se uživatele na číslo a vypiš postupně tolik čísel,
+//// kolik je číslo, které zadal uživatel.
+//// Uživatel má na zadání více pokusů.
+
+
+// Vytvořím dopředu některé proměnné. Proč je musím vytvořit teď,
+// si vysvětlíme v příštích hodinách
 bool success = false;
 int numIterations = 0;
+
+// Cyklus, který se uživatele ptá dokud nezadá číslo
 do
 {
     Console.WriteLine("Enter a number:");
-    // Vstup od uživatele je vždy string
+    // Vstup od uživatele do konzole je vždy string
     string numIterationsString = Console.ReadLine();
 
     numIterations = 0;
     // Převedu string na int speciální funkcí
+    // Proměnná success říká, jestli konverze proběhla úspěšně
+    // Klíčové slovo 'out' zatím neznáme, zatím jenom víme, že tam musí být
     success = int.TryParse(numIterationsString, out numIterations);
     Console.WriteLine("success = " + success);
 
+    // !proměnná - znamená negace (jako v matematice)
+    // !true = false, !false = true
 } while (!success);
 
 // Převedené číslo můžu použít
-for (int i = 0; i < numIterations; i = i + 1)
+for (int i = 0; i < numIterations; i++)
 {
     Console.WriteLine(i);
 }
