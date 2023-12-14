@@ -1,0 +1,9 @@
+1) polevka
+2) rizek
+2.5) katuv sleh
+3) ???
+
+StreamReader file2 = new StreamReader("soubor.txt");
+string line1 = file2.ReadLine();
+string line2 = file2.ReadLine();
+file2.Close();
