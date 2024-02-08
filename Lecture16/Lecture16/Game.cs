@@ -12,12 +12,15 @@ class Game
 
     private void PrintState()
     {
-        Console.WriteLine($"player1: health={player1.GetHealth}, attack={player1.GetAttack()}");
-        Console.WriteLine($"player2: health={player2.GetHealth}, attack={player2.GetAttack()}");
+        Console.WriteLine($"player1: health={player1.GetHealth()}, attack={player1.GetAttack()}");
+        Console.WriteLine($"player2: health={player2.GetHealth()}, attack={player2.GetAttack()}");
     }
 
     public void PlayGame()
     {
+        Console.WriteLine("Let the game begin!");
+        PrintState();
+
         while (true)
         {
             ///// PLAYER 1
@@ -69,6 +72,8 @@ class Game
                 Console.WriteLine("Player2 wins!");
                 return;
             }
+
+            Console.WriteLine();
         }
     }
 }
