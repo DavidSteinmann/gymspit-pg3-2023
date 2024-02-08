@@ -1,41 +1,4 @@
 ﻿
-class Character
-{
-    private int health;
-    private int attack;
-
-    public Character(int health, int attack)
-    {
-        this.health = health;
-        this.attack = attack;
-    }
-
-    public void DecreseHealth(int amount)
-    {
-        this.health -= amount;
-    }
-
-    public int GetAttack()
-    {
-        return this.attack;
-    }
-
-    public int GetHealth()
-    {
-        return this.health;
-    }
-
-    public bool IsAlive()
-    {
-        return this.health > 0;
-    }
-
-    public virtual string TakeTurn()
-    {
-        return "";
-    }
-}
-
 class Player : Character
 {
     public Player(int health, int attack) : base(health, attack)
@@ -45,26 +8,19 @@ class Player : Character
 
     public override string TakeTurn()
     {
-        //TODO
-        // return "attack" or "wait"
-        return "tah";
-    }
-}
+        Console.WriteLine("What do you want to play? 'a' - attack, 'w' - wait");
 
-class AI : Character
-{
-    public AI(int health, int attack) : base(health, attack)
-    {
+        string response = Console.ReadLine();
+        switch (response)
+        {
+            case "a":
+                return "attack";
 
-    }
+            case "w":
+                return "wait";
+        }
 
-    public override string TakeTurn()
-    {
-        Random rnd = new Random();
-
-        // TODO
-        // return "attack" or "wait"
-
-        return "attack";
+        Console.WriteLine("Invalid move, playing 'wait'");
+        return "wait";
     }
 }
