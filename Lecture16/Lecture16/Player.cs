@@ -20,6 +20,11 @@ class Character
         return this.attack;
     }
 
+    public int GetHealth()
+    {
+        return this.health;
+    }
+
     public bool IsAlive()
     {
         return this.health > 0;
